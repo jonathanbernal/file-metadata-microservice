@@ -13,7 +13,7 @@ app.use('/public', express.static(process.cwd() + '/public'));
 // we do not need to store it in local storage, but multer
 // still requires us to define a destination directory for
 // the uploads.
-const upload = multer({ dest: '/uploads' });
+const upload = multer({ dest: __dirname + '/uploads' });
 
 app.get('/', function (req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
